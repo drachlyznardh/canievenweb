@@ -6,7 +6,9 @@ const loadAlbums = () => {
 
 				document.getElementById('albums').innerHTML = document.getElementById('albums').innerHTML + `
 					<div class="album">
-						<img id="thumbnail-${album.id}" class="thumbnail" src="/node.svg"/>
+						<a class="thumbnail" onclick="toggleAlbum();loadAlbum(${album.id})">
+							<img onclick="toggleAlbum()" id="thumbnail-${album.id}" src="/node.svg"/>
+						</a>
 						<div class="description">
 							<span id="counter-${album.id}">Qualche</span> foto</strong><br/>
 							scattate da<br/>
@@ -35,6 +37,17 @@ const loadAlbums = () => {
 			}
 	})
 }
+
+modalAlbum = document.getElementById('modal-album')
+
+function toggleAlbum() { modalAlbum.classList.toggle("show-modal"); }
+function windowOnClick(event) { if (event.target === modalAlbum) toggleAlbum(); }
+
+function loadAlbum(id) {
+	modalAlbum.innerHTML = id
+}
+
+window.addEventListener("click", windowOnClick)
 
 loadAlbums();
 
