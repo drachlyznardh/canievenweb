@@ -35,10 +35,10 @@
 .album {
     float: left;
     width: 50%;
+    padding: 1em;
 }
 
-.thumbnail + img {
-    float: left;
+.thumbnail {
     height: 150px;
     width: 150px;
 }
