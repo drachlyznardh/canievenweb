@@ -14,7 +14,7 @@ const loadAlbums = () => {
 				<img class="thumbnail" src="" />
 				<div class="description">
 					<strong>${album} photos</strong>
-					scattate da <a id="author-${album.id}">some author</a>, <a id="location-${album.id}">some place</a>
+					scattate da <span class="glyphicon glyphicon-user"></span> <a id="author-${album.id}">some author</a>, <span class="glyphicon glyphicon-map-marker"></span> <a id="location-${album.id}">some place</a>
 				</div>
 			</div>
 		`
