@@ -1,7 +1,7 @@
 .jumbotron {
     background: #532F8C;
     color: white;
-    padding-bottom: 80px;
+    padding-bottom: 0px; /* 80px; */
 }
 .jumbotron .btn-primary {
     background: #845ac7;
@@ -13,7 +13,7 @@
 .jumbotron p {
     color: #d9ccee;
     max-width: 75%;
-    margin: 1em auto 2em;
+    margin: 1em auto 1em;
 }
 .navbar + .jumbotron {
     margin-top: -20px;
@@ -30,5 +30,19 @@
 }
 .jumbotron .lang-logo img {
     max-width: 100%;
+}
+
+.footer {
+	background-color: #222;
+	border-color: #080808;
+}
+
+.footer-nav {
+	list-style-type: none;
+	float: left;
+}
+
+.footer-right {
+	float: right ! important;
 }
 
