@@ -1,6 +1,6 @@
 
 const loadAlbums = () => {
-	const xhttp = new XMLHttpRequest();
+	const request = new XMLHttpRequest();
 	request.open("GET", "https://http://jsonplaceholder.typicode.com/albums", false);
 	request.send();
 
