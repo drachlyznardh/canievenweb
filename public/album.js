@@ -8,8 +8,13 @@ const loadAlbums = () => {
 
 	for (let album of albums) {
 		document.getElementById('albums').innerHTML = document.getElementById('albums').innerHTML + `
-			<div>
-				<h3>${album.title}</h3>
+			<div class="album">
+				<img class="thumbnail" src="" />
+				<div class="description">
+					<strong>${album} photos</strong>
+					scattate da
+					${album.title}, ${album.title}
+				</div>
 			</div>
 		`
 	}
