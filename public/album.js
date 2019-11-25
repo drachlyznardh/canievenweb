@@ -22,7 +22,7 @@ const loadAlbums = () => {
 					.then(json => {
 						var author = document.getElementById('author-' + album.id)
 						author.innerHTML = json.name
-						author.href = json.website
+						author.href = 'http://' + json.website
 
 						var userLocation = document.getElementById('location-' + album.id)
 						userLocation.innerHTML = json.address.city
