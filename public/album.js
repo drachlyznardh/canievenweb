@@ -26,6 +26,12 @@ const loadAlbums = () => {
 						userLocation.innerHTML = json.address.city
 						userLocation.href = 'https://www.google.com/maps/@' + json.address.geo.lat + ',' + json.address.geo.lng + ',15z'
 				})
+
+				fetch("http://jsonplaceholder.typicode.com/photos?albumId=" + album.id).then(response => response.json())
+					.then(json => {
+						document.getElementById('counter-' + album.id).innerHTML = json.length
+						document.getElementById('thumbnail-' + album.id).src = json[Math.floor(Math.random() * json.length)].thumbnailUrl
+				})
 			}
 	})
 }
