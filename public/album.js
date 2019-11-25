@@ -1,20 +1,18 @@
 
 const loadAlbums = () => {
 	const request = new XMLHttpRequest();
-	request.open("GET", "https://http://jsonplaceholder.typicode.com/albums", false);
+	request.open("GET", "https://jsonplaceholder.typicode.com/albums", false);
 	request.send();
 
 	const albums = JSON.parse(request.responseText);
-	document.getElementsbyId('albums').innerHTML = albums;
 
-	/* for (album in albums) {
-		document.getElementsbyId('albums').innerHTML = document.getElementsbyId('albums').innerHTML + `
+	for (let album of albums) {
+		document.getElementById('albums').innerHTML = document.getElementById('albums').innerHTML + `
 			<div>
-				<h3>Album</h3>
-				${album}
+				<h3>${album.title}</h3>
 			</div>
 		`
-	} */
+	}
 }
 
 loadAlbums();
