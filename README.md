@@ -8,7 +8,6 @@ can deploy stuff on https://www.heroku.com/ and use that workflow as guidance.
 I set up an account on Heroku, I got snap, I got the Heroki CLI. Got the NodeJS
 sample app running…
 
- $> heroku config:set VERSION=0.0.1
-
-It's dirty, but works.
+Setting ENV version with `$> heroku config:set VERSION=0.0.2`. It's dirty, but
+works.
 
