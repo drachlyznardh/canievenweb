@@ -26,7 +26,6 @@ const loadAlbum = (id) => {
 		}
 	})
 
-	$('#album').collapse("show")
-	$('#gallery').collapse("hide")
+	$('#carousel').carousel(1)
 }
 

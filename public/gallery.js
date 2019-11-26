@@ -1,10 +1,10 @@
 
 const loadGallery = () => {
 	fetch("https://jsonplaceholder.typicode.com/albums").then(response => response.json()).then(json => {
-		$('#gallery > div.panel-body').empty()
+		$('#gallery').empty()
 		for (let album of json) {
 
-			$('#gallery > div.panel-body').append(`
+			$('#gallery').append(`
 				<div class="gallery-album">
 					<a class="thumbnail" onclick="loadAlbum(${album.id})">
 						<img id="thumbnail-${album.id}" src="/node.svg"/>

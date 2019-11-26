@@ -17,32 +17,35 @@
     <p>This is a simple Node application deployed to Heroku<br/>This is a simple app &ndash; 'cause it's my first time and I knew nothing about any of this</p>
   </div>
 </div>
-<div id="accordion" class="container panel-group">
-  <div class="panel panel-default">
-    <div id="photo" class="panel-collapse collapse">
-      <div class="panel-body">
-        <button type="button" class="close" data-toggle="collapse" data-parent="#accordion" href="#album">&times;</button>
+<div id="carousel" class="container carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+
+    <div class="item">
+      <div id="photo" class="">
+        <button type="button" class="close" data-target="#carousel" data-slide-to="1" href="#album">&times;</button>
         <p>Questo è il pannello con la foto</p>
       </div>
     </div>
-  </div>
-  <div class="panel panel-default">
-    <div id="album" class="panel-collapse collapse">
-      <div class="panel-header">
-        <button type="button" class="close" data-toggle="collapse" data-parent="#accordion" href="#album">&times;</button>
-        <h4 class="capitalize" id="album-title">Titolo dell'album</h4>
-      </div>
 
-      <div id="album-content" class="panel-body">Contenuto dell'album</div>
+    <div class="item">
+      <div id="album" class="">
+        <div class="panel-header">
+          <button type="button" class="close" data-target="#carousel" data-slide-to="2">&times;</button>
+          <h4 class="capitalize" id="album-title">Titolo dell'album</h4>
+        </div>
 
-      <div class="panel-footer">
-        <button type="button" class="btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#album">Close album</button>
+        <div id="album-content" class="panel-body">Contenuto dell'album</div>
+
+        <div class="panel-footer">
+          <button type="button" class="btn btn-default" data-target="#carousel" data-slide-to="2">Close album</button>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="panel panel-default">
-    <div id="gallery" class="panel-collapse collapse in">
-      <div class="panel-body">Galleria</div>
+
+    <div class="item active">
+      <div id="gallery">
+        <p>Galleria</p>
+      </div>
     </div>
   </div>
 </div>
