@@ -20,7 +20,7 @@ const loadGallery = () => {
 
 			fetch("https://jsonplaceholder.typicode.com/users/" + album.userId + "/").then(response => response.json()).then(json => {
 				var author = document.getElementById('author-' + album.id)
-				author.innerHTML = json.name
+				author.textContent = json.name
 				author.href = 'http://' + json.website
 
 				var userLocation = document.getElementById('location-' + album.id)
@@ -28,8 +28,8 @@ const loadGallery = () => {
 				userLocation.href = 'https://www.google.com/maps/@' + json.address.geo.lat + ',' + json.address.geo.lng + ',15z'
 			})
 
-			fetch("http://jsonplaceholder.typicode.com/photos?albumId=" + album.id).then(response => response.json()).then(json => {
-				document.getElementById('counter-' + album.id).innerHTML = json.length
+			fetch("https://jsonplaceholder.typicode.com/photos?albumId=" + album.id).then(response => response.json()).then(json => {
+				document.getElementById('counter-' + album.id).textContent = json.length
 				document.getElementById('thumbnail-' + album.id).src = json[Math.floor(Math.random() * json.length)].thumbnailUrl
 			})
 		}

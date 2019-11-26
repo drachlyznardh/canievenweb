@@ -34,7 +34,13 @@
 
 .gallery-album {
     float: left;
-    width: 12%;
+    width: 50%;
+    padding: 1em;
+}
+
+.album-element {
+    float: left;
+    width: 25%;
     padding: 1em;
 }
 
@@ -49,6 +55,22 @@
     padding-left: 1em;
 }
 
+.album-element .thumbnail {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.album-element .description {
+    width: 100%;
+}
+
 .capitalize {
     text-transform: capitalize;
+}
+
+.hide-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
