@@ -6,10 +6,11 @@ const loadAlbum = (id) => {
 	})
 
 	fetch('https://jsonplaceholder.typicode.com/photos?albumId=' + id).then(response => response.json()).then(json => {
-		document.getElementById('album-content').empty()
-		document.getElementById('album-content').append(`
-			<p>Cane</p>
-		`)
+		$('#album-content').empty()
+		// document.getElementById('album-content').empty()
+		// document.getElementById('album-content').append(`
+		// 	<p>Cane</p>
+		// `)
 		for (let photo of json) {
 			document.getElementById('album-content').append(`
 				<div class="gallery-album">
@@ -26,6 +27,10 @@ const loadAlbum = (id) => {
 		}
 	})
 
-	$('#carousel').carousel(1)
+	$('#tabnav a[href="#album"]').tab('show')
+}
+
+const backToGallery = () => {
+	$('#tabnav a[href="#gallery"]').tab('show')
 }
 

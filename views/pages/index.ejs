@@ -17,35 +17,35 @@
     <p>This is a simple Node application deployed to Heroku<br/>This is a simple app &ndash; 'cause it's my first time and I knew nothing about any of this</p>
   </div>
 </div>
-<div id="carousel" class="container carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
+<div class="container">
+  <ul id="tabnav" class="nav nav-pills hidden">
+    <li><a data-toggle="pill" href="#photo">Photo</a></li>
+    <li><a data-toggle="pill" href="#album">Album</a></li>
+    <li class="active"><a data-toggle="pill" href="#gallery">Gallery</a></li>
+  </ul>
+  <div class="tab-content">
 
-    <div class="item">
-      <div id="photo" class="">
-        <button type="button" class="close" data-target="#carousel" data-slide-to="1" href="#album">&times;</button>
-        <p>Questo è il pannello con la foto</p>
+    <div id="photo" class="tab-pane fade">
+      <a data-toggle="pill" href="#photo">&times;</a>
+      <p>Questo è il pannello con la foto</p>
+      <button type="button" class="btn btn-default" data-target="#carousel" data-slide-to="1">Close photo</button>
+    </div>
+
+    <div id="album" class="tab-pane fade">
+      <div class="panel-header">
+        <button type="button" class="close" onclick="backToGallery()">&times;</button>
+        <h4 class="capitalize" id="album-title">Titolo dell'album</h4>
+      </div>
+
+      <div id="album-content" class="panel-body">Contenuto dell'album</div>
+
+      <div class="panel-footer">
+        <button type="button" class="btn btn-default" onclick="backToGallery()">Close album</button>
       </div>
     </div>
 
-    <div class="item">
-      <div id="album" class="">
-        <div class="panel-header">
-          <button type="button" class="close" data-target="#carousel" data-slide-to="2">&times;</button>
-          <h4 class="capitalize" id="album-title">Titolo dell'album</h4>
-        </div>
-
-        <div id="album-content" class="panel-body">Contenuto dell'album</div>
-
-        <div class="panel-footer">
-          <button type="button" class="btn btn-default" data-target="#carousel" data-slide-to="2">Close album</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="item active">
-      <div id="gallery">
-        <p>Galleria</p>
-      </div>
+    <div id="gallery" class="tab-pane fade in active">
+      <p>Galleria</p>
     </div>
   </div>
 </div>
