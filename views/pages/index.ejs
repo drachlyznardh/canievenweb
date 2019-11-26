@@ -17,30 +17,39 @@
     <p>This is a simple Node application deployed to Heroku<br/>This is a simple app &ndash; 'cause it's my first time and I knew nothing about any of this</p>
   </div>
 </div>
-<div class="container">
-  <div id="photo"></div>
-  <script type="text/javascript" src="/photo.js"></script>
-  <div id="modal-album" class="modal modal-lg fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" data-target="#modal-album">&times;</button>
-          <h4 class="modal-title capitalize" id="album-title">Titolo dell'album</h4>
-        </div>
-
-        <div id="album-content" class="modal-body">Contenuto dell'album</div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" data-target="#modal-album">Close album</button>
-        </div>
+<div id="accordion" class="container panel-group">
+  <div class="panel panel-default">
+    <div id="photo" class="panel-collapse collapse">
+      <div class="panel-body">
+        <button type="button" class="close" data-toggle="collapse" data-parent="#accordion" href="#album">&times;</button>
+        <p>Questo è il pannello con la foto</p>
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="/album.js"></script>
-  <div id="gallery"></div>
-  <script type="text/javascript" src="/gallery.js"></script>
+  <div class="panel panel-default">
+    <div id="album" class="panel-collapse collapse">
+      <div class="">
+        <button type="button" class="close" data-toggle="collapse" data-parent="#accordion" href="#gallery">&times;</button>
+        <h4 class="capitalize" id="album-title">Titolo dell'album</h4>
+      </div>
+
+      <div id="album-content" class="">Contenuto dell'album</div>
+
+      <div class="">
+        <button type="button" class="btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#gallery">Close album</button>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div id="gallery" class="panel-collapse collapse in">
+      <div class="panel-body">Galleria</div>
+    </div>
   </div>
 </div>
+
+<script type="text/javascript" src="/photo.js"></script>
+<script type="text/javascript" src="/album.js"></script>
+<script type="text/javascript" src="/gallery.js"></script>
 
 </body>
 </html>
