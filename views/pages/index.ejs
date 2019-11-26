@@ -26,9 +26,16 @@
   <div class="tab-content">
 
     <div id="photo" class="tab-pane fade">
-      <a data-toggle="pill" href="#photo">&times;</a>
-      <p>Questo è il pannello con la foto</p>
-      <button type="button" class="btn btn-default" data-target="#carousel" data-slide-to="1">Close photo</button>
+      <div class="container photo-container">
+        <button type="button" class="close" onclick="backToAlbum()">&times;</button>
+        <a onclick="backToAlbum()">
+          <img id="photo-img" src="" />
+        </a>
+        <p id="photo-description" class="description">Questo è il pannello con la foto</p>
+      </div>
+      <div class="panel-footer">
+        <button type="button" class="btn btn-default" onclick="backToAlbum()">Close photo</button>
+      </div>
     </div>
 
     <div id="album" class="tab-pane fade">
