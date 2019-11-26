@@ -1,18 +1,15 @@
 
-// album = document.getElementById('album')
+const loadAlbum = (id) => {
 
-// function toggleAlbum() {
-// 	$('#modal-album').modal("toggle")
-// }
-// function windowOnClick(event) { if (event.target === album) toggleAlbum(); }
-
-function loadAlbum(id) => {
-	$('#modal-album').modal("show")
-
-	fetch('https://jsonplaceholder.typicode.com/albums/' + id).then(response => json()).then(json => {
-		$('#album-title').innerHTML = json.title
+	fetch('https://jsonplaceholder.typicode.com/albums?id=' + id).then(response => response.json()).then(json => {
+		document.getElementById('album-title').textContent = json[0].title
 	})
-}
 
-// window.addEventListener("click", windowOnClick)
+	fetch('https://jsonplaceholder.typicode.com/photos?albumId=' + id).then(response => response.json()).then(json => {
+		document.getElementById('album-content').textContent = json
+	})
+
+	$('#modal-album').modal("show")
+	document.getElementById('album-title').textContent = `Album #${id}`
+}
 

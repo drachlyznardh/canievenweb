@@ -1,19 +1,9 @@
 
-const loadAlbum = (id) => {
-	$('#album-title').innerHTML = id
-
-	fetch('https://jsonplaceholder.typicode.com/photos?albumId=' + id).then(response => response.json()).then(json => {
-		$('#album-title').innerHTML = json.title
-	})
-
-	$('#modal-album').modal("show")
-}
-
 const loadGallery = () => {
 	fetch("https://jsonplaceholder.typicode.com/albums").then(response => response.json()).then(json => {
 		for (let album of json) {
 
-			document.getElementById('gallery').innerHTML = document.getElementById('gallery').innerHTML + `
+			$('#gallery').append(`
 				<div class="gallery-album">
 					<a class="thumbnail" onclick="loadAlbum(${album.id})">
 						<img id="thumbnail-${album.id}" src="/node.svg"/>
@@ -25,7 +15,7 @@ const loadGallery = () => {
 						<span class="glyphicon glyphicon-map-marker"></span> <a id="location-${album.id}">da qualche parte</a>
 					</div>
 				</div>
-			`
+			`)
 
 			fetch("https://jsonplaceholder.typicode.com/users/" + album.userId + "/").then(response => response.json()).then(json => {
 				var author = document.getElementById('author-' + album.id)
